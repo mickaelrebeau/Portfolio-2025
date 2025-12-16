@@ -58,9 +58,9 @@
                 <span class="text-xs font-bold uppercase tracking-wider text-red-500">Live Stream</span>
               </div>
               <div class="flex flex-col gap-2">
-                <h3 class="text-2xl font-syne font-bold text-white">Coding Sessions</h3>
+                <h3 class="text-2xl font-syne font-bold text-(--text-primary)">Coding Sessions</h3>
                 <div class="flex items-center gap-2">
-                  <p class="text-sm text-gray-300">Follow moi sur Twitch</p>
+                  <p class="text-sm text-(--text-primary)">Follow moi sur Twitch</p>
                   <ExternalLink class="w-3 h-3" />
                 </div>
               </div>
@@ -72,7 +72,7 @@
           class="col-span-1 md:col-span-2 row-span-1 p-10 flex items-center justify-between bg-(--accent) text-black dark:text-white">
           <div class="tilt-content">
             <h3 class="text-4xl font-syne font-bold mb-2">Game Dev | Mobile Dev | IA & Data </h3>
-            <p class="text-black/70 max-w-sm dark:text-white/70">J'aime apprendre de nouvelles technologies. Je partage mes découvertes sur Twitter la plupart du temps mais également sur Twitch et Linkedin parfois.</p>
+            <p class="text-(--text-primary) max-w-sm">J'aime apprendre de nouvelles technologies. Je partage mes découvertes sur Twitter la plupart du temps mais également sur Twitch et Linkedin parfois.</p>
           </div>
           <BrainCircuit class="w-24 h-24 opacity-20 tilt-content" />
         </BentoCard>
