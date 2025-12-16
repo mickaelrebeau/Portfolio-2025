@@ -14,7 +14,7 @@
   --text-primary: #e1e1e1;
   --text-primary-hover: #080808;
   --text-secondary: #888888;
-  --accent: #D946EF;
+  --accent: #e879f9;
   --card-bg: rgba(255, 255, 255, 0.03);
   --card-border: rgba(255, 255, 255, 0.05);
   --separator: rgba(255, 255, 255, 0.1);
@@ -22,6 +22,7 @@
   --monitor-bg: #111;
   --monitor-border: #333;
   --nav-mix-blend: difference;
+  --cursor-color: var(--accent);
 }
 
 [data-theme="light"] {
@@ -30,13 +31,14 @@
   --text-primary: #111111;
   --text-primary-hover: #d1d1d1;
   --text-secondary: #555555;
-  --accent: #C026D3;
+  --accent: #e879f9;
   --card-bg: rgba(0, 0, 0, 0.03);
   --card-border: rgba(0, 0, 0, 0.08);
   --separator: rgba(0, 0, 0, 0.1);
   --monitor-bg: #fff;
   --monitor-border: #ddd;
   --nav-mix-blend: normal;
+  --cursor-color: var(--accent);
 }
 
 body {
@@ -93,7 +95,7 @@ html {
   left: 0;
   width: var(--cursor-size);
   height: var(--cursor-size);
-  border: 1px solid var(--text-primary);
+  border: 1px solid var(--cursor-color);
   border-radius: 50%;
   pointer-events: none;
   z-index: 9999;
