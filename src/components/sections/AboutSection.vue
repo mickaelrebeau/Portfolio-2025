@@ -6,9 +6,9 @@
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 gap-6 h-auto md:h-[800px]">
-        <BentoCard class="col-span-1 md:col-span-2 row-span-1 p-10 flex flex-col justify-between">
+        <BentoCard no-tilt class="col-span-1 md:col-span-2 row-span-1 p-10 flex flex-col justify-between">
           <div class="tilt-content">
-            <img src="/public/logo.png" alt="Coding" class="w-24 h-24 object-cover mb-6">
+            <img src="@/assets/logo.png" alt="Coding" class="w-24 h-24 object-cover mb-6">
             <h3 class="text-3xl font-syne font-bold mb-4 text-dynamic-primary">Qui suis-je ?</h3>
             <p class="text-dynamic-secondary text-lg leading-relaxed">
               Passionné depuis mes 14 ans par le monde de l'informatique, je suis aujourd'hui un développeur évoluant
@@ -18,7 +18,7 @@
           </div>
         </BentoCard>
 
-        <BentoCard class="col-span-1 row-span-1 p-10 flex flex-col justify-center items-center text-center"
+        <BentoCard :no-tilt="false" class="col-span-1 row-span-1 p-10 flex flex-col justify-center items-center text-center"
           style="background-image: radial-gradient(circle at center, #222 0%, #050505 100%);">
           <div class="tilt-content flex flex-col items-center justify-center w-full">
             <Cpu class="w-12 h-12 text-(--accent) mb-6" />
@@ -46,7 +46,7 @@
           </div>
         </BentoCard>
 
-        <BentoCard class="col-span-1 row-span-1 p-8 relative overflow-hidden group">
+        <BentoCard no-tilt class="col-span-1 row-span-1 p-8 relative overflow-hidden group">
           <a href="https://twitch.tv/mike_dreeman" target="_blank" class="flex items-center gap-2">
             <img
               src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
@@ -69,6 +69,7 @@
         </BentoCard>
 
         <BentoCard
+          no-tilt
           class="col-span-1 md:col-span-2 row-span-1 p-10 flex items-center justify-between bg-(--accent) text-black dark:text-white">
           <div class="tilt-content">
             <h3 class="text-4xl font-syne font-bold mb-2">Game Dev | Mobile Dev | IA & Data </h3>
