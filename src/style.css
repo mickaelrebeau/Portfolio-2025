@@ -3,7 +3,7 @@
 @theme {
   --font-family-sans: 'Space Grotesk', sans-serif;
   --font-family-display: 'Syne', sans-serif;
-  
+
   --color-accent: #D946EF;
   --color-accent-dark: #C026D3;
   --color-accent-rgb: 217, 70, 239;
@@ -90,6 +90,8 @@ h1, h2, h3, .display-font, .font-syne {
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 .cursor {
@@ -192,8 +194,12 @@ html {
 }
 
 @keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .bento-container {
@@ -239,11 +245,25 @@ html {
   color: var(--accent) !important;
 }
 
-.text-dynamic-primary { color: var(--text-primary); }
-.text-dynamic-secondary { color: var(--text-secondary); }
-.bg-dynamic-secondary { background-color: var(--bg-secondary); }
-.border-dynamic { border-color: var(--card-border); }
-.border-dynamic-separator { border-color: var(--separator); }
+.text-dynamic-primary {
+  color: var(--text-primary);
+}
+
+.text-dynamic-secondary {
+  color: var(--text-secondary);
+}
+
+.bg-dynamic-secondary {
+  background-color: var(--bg-secondary);
+}
+
+.border-dynamic {
+  border-color: var(--card-border);
+}
+
+.border-dynamic-separator {
+  border-color: var(--separator);
+}
 
 nav {
   mix-blend-mode: var(--nav-mix-blend);
@@ -256,8 +276,13 @@ nav {
 }
 
 @keyframes shimmer {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
 }
 
 .animate-shimmer {
