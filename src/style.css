@@ -6,6 +6,7 @@
   
   --color-accent: #D946EF;
   --color-accent-dark: #C026D3;
+  --color-accent-rgb: 217, 70, 239;
 }
 
 :root {
@@ -15,6 +16,7 @@
   --text-primary-hover: #080808;
   --text-secondary: #888888;
   --accent: #e879f9;
+  --accent-rgb: 232, 121, 249;
   --card-bg: rgba(255, 255, 255, 0.03);
   --card-border: rgba(255, 255, 255, 0.05);
   --separator: rgba(255, 255, 255, 0.1);
@@ -30,8 +32,9 @@
   --bg-secondary: #E5E5E5;
   --text-primary: #111111;
   --text-primary-hover: #d1d1d1;
-  --text-secondary: #555555;
-  --accent: #e879f9;
+  --text-secondary: #080808;
+  --accent: #4169E1;
+  --accent-rgb: 65, 105, 225;
   --card-bg: rgba(0, 0, 0, 0.03);
   --card-border: rgba(0, 0, 0, 0.08);
   --separator: rgba(0, 0, 0, 0.1);
@@ -127,7 +130,7 @@ html {
 #preloader {
   position: fixed;
   inset: 0;
-  background: #000;
+  background: var(--bg-color);
   z-index: 10000;
   display: flex;
   justify-content: center;
@@ -137,7 +140,7 @@ html {
 
 .loader-text {
   font-family: 'Syne', sans-serif;
-  font-size: 3rem;
+  font-size: 4rem;
   color: var(--accent);
 }
 
@@ -221,14 +224,14 @@ html {
 }
 
 .monitor-frame {
-  box-shadow: 0 0 80px rgba(217, 70, 239, 0.1);
+  box-shadow: 0 0 80px rgba(var(--accent-rgb), 0.1);
   background: var(--monitor-bg);
   border: 1px solid var(--monitor-border);
 }
 
 .active-project-card {
   border-left-color: var(--accent) !important;
-  background: linear-gradient(90deg, rgba(217, 70, 239, 0.1) 0%, transparent 100%);
+  background: linear-gradient(90deg, rgba(var(--accent-rgb), 0.1) 0%, transparent 100%);
   padding-left: 2rem !important;
 }
 

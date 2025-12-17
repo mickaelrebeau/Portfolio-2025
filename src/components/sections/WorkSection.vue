@@ -12,7 +12,7 @@
                 <div class="w-full lg:w-1/3 flex flex-col gap-4 relative">
                     <button @click="scrollUp" :disabled="!canScrollUp"
                         class="w-full flex items-center justify-center p-2 transition-all duration-300 rounded-t-lg group border border-transparent hover:border-(--accent)/20"
-                        :class="canScrollUp ? 'text-white/50 hover:text-(--accent) hover:bg-white/5 cursor-pointer' : 'opacity-0 pointer-events-none'">
+                        :class="canScrollUp ? 'text-dynamic-primary hover:text-(--accent) hover:bg-white/5 cursor-pointer' : 'opacity-0 pointer-events-none'">
                         <ChevronUp class="w-6 h-6 transition-transform"
                             :class="{ 'group-hover:-translate-y-1': canScrollUp }" />
                     </button>
@@ -25,7 +25,7 @@
 
                     <button @click="scrollDown" :disabled="!canScrollDown"
                         class="w-full flex items-center justify-center p-2 transition-all duration-300 rounded-b-lg group border border-transparent hover:border-(--accent)/20"
-                        :class="canScrollDown ? 'text-white/50 hover:text-(--accent) hover:bg-white/5 cursor-pointer' : 'opacity-0 pointer-events-none'">
+                        :class="canScrollDown ? 'text-dynamic-primary hover:text-(--accent) hover:bg-white/5 cursor-pointer' : 'opacity-0 pointer-events-none'">
                         <ChevronDown class="w-6 h-6 transition-transform"
                             :class="{ 'group-hover:translate-y-1': canScrollDown }" />
                     </button>
@@ -75,7 +75,7 @@
                                 <RefreshCw class="w-5 h-5" />
                             </button>
                             <a :href="currentUrl" target="_blank"
-                                class="bg-(--accent) text-black px-6 py-3 rounded-full font-bold text-sm uppercase flex items-center gap-2 hover:bg-white transition-colors hoverable shadow-[0_0_20px_rgba(217,70,239,0.4)] transform hover:scale-105">
+                                class="bg-(--accent) dark:bg-(--accent) text-white dark:text-black px-6 py-3 rounded-full font-bold text-sm uppercase flex items-center gap-2 hover:bg-white hover:text-black transition-colors hoverable transform hover:scale-105">
                                 Full Screen
                                 <ExternalLink class="w-4 h-4" />
                             </a>
