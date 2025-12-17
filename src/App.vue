@@ -1,24 +1,25 @@
 <template>
-    <div>
-        <AppPreloader @loaded="onLoaded" />
-        <AppCursor />
-        <NoiseOverlay />
-        <AppNavigation />
+    <VueLenis root :options="lenisOptions" />
+    <AppPreloader @loaded="onLoaded" />
+    <AppCursor />
+    <NoiseOverlay />
+    <AppNavigation />
 
-        <main v-show="isLoaded">
-            <HeroSection :loaded="isLoaded" />
-            <MarqueeSection />
-            <AboutSection />
-            <WorkSection />
-            <ExperienceSection />
-            <FooterSection />
-        </main>
-    </div>
+    <section v-show="isLoaded">
+        <HeroSection :loaded="isLoaded" />
+        <MarqueeSection />
+        <AboutSection />
+        <WorkSection />
+        <ExperienceSection />
+        <FooterSection />
+    </section>
 </template>
 
 <script setup lang="ts">
 import { ref, onMounted, nextTick } from 'vue'
 import { useTheme } from '@/hooks/useTheme'
+import { VueLenis, useLenis } from 'lenis/vue'
+import { inject } from '@vercel/analytics'
 import AppPreloader from '@/layout/AppPreloader.vue'
 import AppCursor from '@/layout/AppCursor.vue'
 import AppNavigation from '@/layout/AppNavigation.vue'
@@ -30,7 +31,20 @@ import WorkSection from '@/components/sections/WorkSection.vue'
 import ExperienceSection from '@/components/sections/ExperienceSection.vue'
 import FooterSection from '@/components/sections/FooterSection.vue'
 
+inject()
+
 const isLoaded = ref(false)
+
+const lenisOptions = {
+    lerp: 0.1,
+    duration: 1.2,
+    smoothWheel: true,
+    wheelMultiplier: 1,
+    touchMultiplier: 2,
+    infinite: false,
+}
+
+const lenis = useLenis()
 
 useTheme()
 
@@ -92,11 +106,11 @@ onMounted(() => {
         if (anchor) {
             e.preventDefault()
             const href = anchor.getAttribute('href')
-            if (href) {
-                const element = document.querySelector(href)
-                if (element) {
-                    element.scrollIntoView({ behavior: 'smooth' })
-                }
+            if (href && lenis.value) {
+                lenis.value.scrollTo(href, {
+                    offset: 0,
+                    duration: 1.5,
+                })
             }
         }
     })

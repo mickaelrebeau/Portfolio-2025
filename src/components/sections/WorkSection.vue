@@ -1,19 +1,37 @@
 <template>
-    <section id="work" class="min-h-screen py-24 px-6 relative bg-dynamic-secondary transition-colors duration-500">
+    <section id="work"
+        class="min-h-screen py-12 md:py-24 px-6 relative bg-dynamic-secondary transition-colors duration-500">
         <div class="container mx-auto">
             <div class="mb-12 flex justify-between items-end">
                 <h2 class="text-4xl md:text-6xl font-syne font-bold clean-text text-dynamic-primary">WORK STATION</h2>
-                <div class="hidden md:block text-(--accent) font-mono text-sm tracking-widest animate-pulse">SYSTEM
-                    READY</div>
+                <p class="hidden md:block text-(--accent) font-mono text-sm tracking-widest animate-pulse">SYSTEM
+                    READY</p>
             </div>
 
             <div class="flex flex-col lg:flex-row gap-8 lg:h-[80vh]">
-                <div class="w-full lg:w-1/3 flex flex-col gap-2 overflow-y-auto pr-2 hide-scrollbar">
-                    <ProjectCard v-for="(project, index) in projects" :key="project.id" :project="project"
-                        :is-active="currentProjectIndex === index" @click="loadProject(index)" />
+                <div class="w-full lg:w-1/3 flex flex-col gap-4 relative">
+                    <button @click="scrollUp" :disabled="!canScrollUp"
+                        class="w-full flex items-center justify-center p-2 transition-all duration-300 rounded-t-lg group border border-transparent hover:border-(--accent)/20"
+                        :class="canScrollUp ? 'text-white/50 hover:text-(--accent) hover:bg-white/5 cursor-pointer' : 'opacity-0 pointer-events-none'">
+                        <ChevronUp class="w-6 h-6 transition-transform"
+                            :class="{ 'group-hover:-translate-y-1': canScrollUp }" />
+                    </button>
+
+                    <div ref="projectListRef" @scroll="checkScroll"
+                        class="flex flex-col gap-2 overflow-hidden h-full relative scroll-smooth">
+                        <ProjectCard v-for="(project, index) in projects" :key="project.id" :project="project"
+                            :is-active="currentProjectIndex === index" @click="loadProject(index)" />
+                    </div>
+
+                    <button @click="scrollDown" :disabled="!canScrollDown"
+                        class="w-full flex items-center justify-center p-2 transition-all duration-300 rounded-b-lg group border border-transparent hover:border-(--accent)/20"
+                        :class="canScrollDown ? 'text-white/50 hover:text-(--accent) hover:bg-white/5 cursor-pointer' : 'opacity-0 pointer-events-none'">
+                        <ChevronDown class="w-6 h-6 transition-transform"
+                            :class="{ 'group-hover:translate-y-1': canScrollDown }" />
+                    </button>
                 </div>
 
-                <div class="w-full lg:w-2/3 relative flex flex-col">
+                <div class="w-full lg:w-2/3 relative hidden lg:flex flex-col">
                     <div class="monitor-frame rounded-t-xl p-3 flex justify-between items-center text-xs text-gray-500 font-mono select-none"
                         style="border-bottom: 1px solid var(--monitor-border);">
                         <div class="flex gap-2">
@@ -70,8 +88,8 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-import { MonitorPlay, RefreshCw, ExternalLink } from 'lucide-vue-next'
+import { ref, onMounted } from 'vue'
+import { MonitorPlay, RefreshCw, ExternalLink, ChevronUp, ChevronDown } from 'lucide-vue-next'
 import { projects } from '@/data/projects'
 import ProjectCard from '@/components/ui/ProjectCard.vue'
 
@@ -79,8 +97,17 @@ const currentProjectIndex = ref(-1)
 const currentUrl = ref('')
 const isLoading = ref(false)
 const iframeRef = ref<HTMLIFrameElement | null>(null)
+const projectListRef = ref<HTMLElement | null>(null)
+const canScrollUp = ref(false)
+const canScrollDown = ref(true)
+const isMobile = ref(window.innerWidth < 720)
 
 const loadProject = (index: number) => {
+    if (isMobile.value) {
+        window.open(projects[index].url, '_blank')
+        return
+    }
+
     if (currentProjectIndex.value === index) return
 
     currentProjectIndex.value = index
@@ -110,4 +137,40 @@ const refreshIframe = () => {
         }, 100)
     }
 }
+
+const checkScroll = () => {
+    if (projectListRef.value) {
+        const { scrollTop, scrollHeight, clientHeight } = projectListRef.value
+        canScrollUp.value = scrollTop > 10
+        canScrollDown.value = scrollTop + clientHeight < scrollHeight - 10
+    }
+}
+
+const scrollUp = () => {
+    if (projectListRef.value) {
+        projectListRef.value.scrollBy({ top: -150, behavior: 'smooth' })
+    }
+}
+
+const scrollDown = () => {
+    if (projectListRef.value) {
+        projectListRef.value.scrollBy({ top: 150, behavior: 'smooth' })
+    }
+}
+
+onMounted(() => {
+    setTimeout(checkScroll, 100)
+
+    if (projectListRef.value) {
+        const resizeObserver = new ResizeObserver(() => {
+            checkScroll()
+        })
+        resizeObserver.observe(projectListRef.value)
+    }
+
+    window.addEventListener('resize', () => {
+        isMobile.value = window.innerWidth < 720
+        checkScroll()
+    })
+})
 </script>

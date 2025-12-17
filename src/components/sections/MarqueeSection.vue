@@ -1,6 +1,6 @@
 <template>
   <section class="py-12 border-y border-white/5 bg-(--accent) text-black overflow-hidden -rotate-2 scale-110">
-    <div class="marquee-container font-syne font-black text-6xl uppercase tracking-tighter">
+    <div class="marquee-container font-syne font-black text-4xl md:text-6xl uppercase tracking-tighter">
       <div class="marquee-content">
         {{ marqueeText }}{{ marqueeText }}
       </div>

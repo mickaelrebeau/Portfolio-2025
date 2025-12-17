@@ -1,7 +1,7 @@
 <template>
-    <section class="py-32 px-6">
+    <section class="py-12 mb:py-32 px-6">
         <div class="container mx-auto">
-            <h2 class="text-6xl font-syne font-bold mb-16 text-center clean-text text-dynamic-primary">EXPÉRIENCES</h2>
+            <h2 class="text-4xl md:text-6xl font-syne font-bold mb-16 text-center clean-text text-dynamic-primary">EXPÉRIENCES</h2>
 
             <div class="space-y-8 max-w-4xl mx-auto">
                 <div v-for="exp in experiences" :key="exp.title"
@@ -12,7 +12,7 @@
                         </h3>
                         <span class="text-sm text-dynamic-secondary">{{ exp.period }}</span>
                     </div>
-                    <p class="text-lg text-dynamic-secondary mb-2">{{ exp.company }}</p>
+                    <p class="text-lg font-semibold text-(--accent) mb-2">{{ exp.company }}</p>
                     <p v-if="exp.description" class="text-sm text-dynamic-secondary">{{ exp.description }}</p>
                 </div>
             </div>

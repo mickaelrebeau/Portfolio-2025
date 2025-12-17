@@ -1,6 +1,6 @@
 <template>
   <div id="preloader" ref="preloaderRef" :style="{ transform: isLoaded ? 'translateY(-100%)' : 'translateY(0)' }">
-    <div ref="textRef" class="loader-text font-bold tracking-tighter" v-html="displayText"></div>
+    <div ref="textRef" class="loader-text font-bold tracking-tighter text-center px-4" v-html="displayText"></div>
   </div>
 </template>
 

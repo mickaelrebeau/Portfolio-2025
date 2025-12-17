@@ -1,27 +1,24 @@
 <template>
   <section class="h-screen w-full flex flex-col justify-center px-6 relative overflow-hidden">
     <div
-      class="absolute top-1/4 right-10 w-[500px] h-[500px] bg-(--accent) rounded-full blur-[180px] opacity-10 animate-pulse mix-blend-screen"
-    ></div>
+      class="absolute top-1/4 right-10 w-[500px] h-[500px] bg-(--accent) rounded-full blur-[180px] opacity-10 animate-pulse mix-blend-screen">
+    </div>
 
     <div class="container mx-auto z-10">
-      <p class="reveal-text text-(--accent) mb-4 uppercase tracking-widest text-sm font-bold"
+      <h3 class="reveal-text text-(--accent) mb-4 uppercase tracking-widest text-sm font-bold"
         :class="{ visible: isVisible }">
         Développeur Fullstack - Vue.js & Python
-      </p>
+      </h3>
 
-      <h1 class="text-[12vw] leading-[0.85] font-extrabold tracking-tighter perspective-container">
-        <div class="overflow-hidden">
-          <span class="block clean-text text-dynamic-primary" :class="{ visible: isVisible }">
-            MICKAEL
-          </span>
-        </div>
-        <div class="overflow-hidden">
-          <span class="block clean-text text-dynamic-secondary" :class="{ visible: isVisible }"
-            style="transition-delay: 0.1s;">
-            RÉBEAU
-          </span>
-        </div>
+      <h1 class="text-[12vw] leading-[0.85] font-extrabold tracking-tighter perspective-container overflow-hidden">
+        <span class="block clean-text text-dynamic-primary" :class="{ visible: isVisible }">
+          MICKAEL
+        </span>
+        <br />
+        <span class="block clean-text text-dynamic-secondary" :class="{ visible: isVisible }"
+          style="transition-delay: 0.1s;">
+          RÉBEAU
+        </span>
       </h1>
 
       <div class="mt-12 flex flex-col md:flex-row justify-between items-end overflow-hidden">

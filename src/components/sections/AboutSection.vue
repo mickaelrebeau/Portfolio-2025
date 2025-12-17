@@ -18,7 +18,8 @@
           </div>
         </BentoCard>
 
-        <BentoCard :no-tilt="false" class="col-span-1 row-span-1 p-10 flex flex-col justify-center items-center text-center"
+        <BentoCard :no-tilt="false"
+          class="col-span-1 row-span-1 p-10 flex flex-col justify-center items-center text-center"
           style="background-image: radial-gradient(circle at center, #222 0%, #050505 100%);">
           <div class="tilt-content flex flex-col items-center justify-center w-full">
             <Cpu class="w-12 h-12 text-(--accent) mb-6" />
@@ -46,8 +47,8 @@
           </div>
         </BentoCard>
 
-        <BentoCard no-tilt class="col-span-1 row-span-1 p-8 relative overflow-hidden group">
-          <a href="https://twitch.tv/mike_dreeman" target="_blank" class="flex items-center gap-2">
+        <BentoCard no-tilt class="col-span-1 row-span-1 relative overflow-hidden group min-h-[300px]">
+          <a href="https://twitch.tv/mike_dreeman" target="_blank" class="block w-full h-full relative">
             <img
               src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
               alt="Coding"
@@ -68,12 +69,12 @@
           </a>
         </BentoCard>
 
-        <BentoCard
-          no-tilt
+        <BentoCard no-tilt
           class="col-span-1 md:col-span-2 row-span-1 p-10 flex items-center justify-between bg-(--accent) text-black dark:text-white">
           <div class="tilt-content">
             <h3 class="text-4xl font-syne font-bold mb-2">Game Dev | Mobile Dev | IA & Data </h3>
-            <p class="text-(--text-primary) max-w-sm">J'aime apprendre de nouvelles technologies. Je partage mes découvertes sur Twitter la plupart du temps mais également sur Twitch et Linkedin parfois.</p>
+            <p class="text-(--text-primary) max-w-sm">J'aime apprendre de nouvelles technologies. Je partage mes
+              découvertes sur Twitter la plupart du temps mais également sur Twitch et Linkedin parfois.</p>
           </div>
           <BrainCircuit class="w-24 h-24 opacity-20 tilt-content" />
         </BentoCard>
