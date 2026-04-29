@@ -7,7 +7,7 @@
     <div class="container mx-auto z-10">
       <h3 class="reveal-text text-(--accent) mb-4 uppercase tracking-widest text-sm font-bold"
         :class="{ visible: isVisible }">
-        Développeur Fullstack - Vue.js & Python
+        {{ t('hero.role') }}
       </h3>
 
       <h1 class="text-[12vw] leading-[0.85] font-extrabold tracking-tighter perspective-container overflow-hidden">
@@ -24,8 +24,7 @@
       <div class="mt-12 flex flex-col md:flex-row justify-between items-end overflow-hidden">
         <div class="reveal-text max-w-md text-dynamic-secondary text-lg" :class="{ visible: isVisible }"
           style="transition-delay: 0.3s;">
-          Je construis des applications web et mobiles avec Vue.js et Python. Basé en France, disponible dans le monde
-          entier.
+          {{ t('hero.bio') }}
         </div>
 
         <div class="reveal-text mt-8 md:mt-0 flex gap-4 p-1" :class="{ visible: isVisible }"
@@ -50,7 +49,10 @@
 
 <script setup lang="ts">
 import { ref, watch } from 'vue'
+import { useI18n } from 'vue-i18n'
 import { Github, Linkedin, ArrowDown } from 'lucide-vue-next'
+
+const { t } = useI18n()
 
 const isVisible = ref(false)
 

@@ -1,19 +1,19 @@
 <template>
     <section class="py-12 mb:py-32 px-6">
         <div class="container mx-auto">
-            <h2 class="text-4xl md:text-6xl font-syne font-bold mb-16 text-center clean-text text-dynamic-primary">EXPÉRIENCES</h2>
+            <h2 class="text-4xl md:text-6xl font-syne font-bold mb-16 text-center clean-text text-dynamic-primary">{{ t('experience.title') }}</h2>
 
             <div class="space-y-8 max-w-4xl mx-auto">
-                <div v-for="exp in experiences" :key="exp.title"
+                <div v-for="exp in experiences" :key="exp.id"
                     class="group hoverable p-6 border-l-2 border-dynamic-separator hover:border-(--accent) hover:bg-white/5 transition-all duration-300 reveal-on-scroll hover:translate-x-2">
                     <div class="flex flex-col md:flex-row justify-between mb-2">
                         <h3 class="text-2xl font-bold text-dynamic-primary group-hover:text-(--accent)">
-                            {{ exp.title }}
+                            {{ t(`experience.${exp.id}.title`) }}
                         </h3>
-                        <span class="text-sm text-dynamic-secondary">{{ exp.period }}</span>
+                        <span class="text-sm text-dynamic-secondary">{{ t(`experience.${exp.id}.period`) }}</span>
                     </div>
                     <p class="text-lg font-semibold text-(--accent) mb-2">{{ exp.company }}</p>
-                    <p v-if="exp.description" class="text-sm text-dynamic-secondary">{{ exp.description }}</p>
+                    <p class="text-sm text-dynamic-secondary">{{ t(`experience.${exp.id}.description`) }}</p>
                 </div>
             </div>
         </div>
@@ -21,5 +21,8 @@
 </template>
 
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n'
 import { experiences } from '@/data/projects'
+
+const { t } = useI18n()
 </script>

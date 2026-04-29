@@ -9,5 +9,9 @@
 </template>
 
 <script setup lang="ts">
-const marqueeText = 'Frontend Developer — Backend Architect — Machine Learning Enthusiast — Mobile Developer — Streamer — Game Developer — '
+import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
+const marqueeText = computed(() => t('marquee'))
 </script>

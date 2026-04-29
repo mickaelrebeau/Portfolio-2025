@@ -3,9 +3,8 @@
         class="min-h-screen py-12 md:py-24 px-6 relative bg-dynamic-secondary transition-colors duration-500">
         <div class="container mx-auto">
             <div class="mb-12 flex justify-between items-end">
-                <h2 class="text-4xl md:text-6xl font-syne font-bold clean-text text-dynamic-primary">WORK STATION</h2>
-                <p class="hidden md:block text-(--accent) font-mono text-sm tracking-widest animate-pulse">SYSTEM
-                    READY</p>
+                <h2 class="text-4xl md:text-6xl font-syne font-bold clean-text text-dynamic-primary">{{ t('work.title') }}</h2>
+                <p class="hidden md:block text-(--accent) font-mono text-sm tracking-widest animate-pulse">{{ t('work.systemReady') }}</p>
             </div>
 
             <div class="flex flex-col lg:flex-row gap-8 lg:h-[80vh]">
@@ -39,9 +38,9 @@
                             <div class="w-3 h-3 rounded-full bg-yellow-500/50"></div>
                             <div class="w-3 h-3 rounded-full bg-green-500/50"></div>
                         </div>
-                        <span>LIVE PREVIEW TERMINAL</span>
+                        <span>{{ t('work.terminal') }}</span>
                         <div class="flex gap-2">
-                            <span class="text-(--accent)">● REC</span>
+                            <span class="text-(--accent)">{{ t('work.rec') }}</span>
                         </div>
                     </div>
 
@@ -49,7 +48,7 @@
                         style="background: black;">
                         <div v-if="isLoading"
                             class="absolute inset-0 bg-black z-20 flex flex-col items-center justify-center">
-                            <div class="text-(--accent) font-mono animate-pulse mb-2">INITIALIZING...</div>
+                            <div class="text-(--accent) font-mono animate-pulse mb-2">{{ t('work.initializing') }}</div>
                             <div class="w-32 h-1 bg-gray-800 rounded overflow-hidden">
                                 <div class="h-full bg-(--accent) animate-shimmer"></div>
                             </div>
@@ -59,7 +58,7 @@
                             class="absolute inset-0 flex flex-col items-center justify-center z-10"
                             style="background: var(--monitor-bg);">
                             <MonitorPlay class="w-16 h-16 text-gray-500 mb-4 animate-bounce" />
-                            <p class="text-gray-500 font-mono text-sm">SELECT A PROJECT TO INITIALIZE</p>
+                            <p class="text-gray-500 font-mono text-sm">{{ t('work.selectProject') }}</p>
                         </div>
 
                         <iframe ref="iframeRef" :src="currentUrl"
@@ -76,7 +75,7 @@
                             </button>
                             <a :href="currentUrl" target="_blank"
                                 class="bg-(--accent) dark:bg-(--accent) text-white dark:text-black px-6 py-3 rounded-full font-bold text-sm uppercase flex items-center gap-2 hover:bg-white hover:text-black transition-colors hoverable transform hover:scale-105">
-                                Full Screen
+                                {{ t('work.fullScreen') }}
                                 <ExternalLink class="w-4 h-4" />
                             </a>
                         </div>
@@ -89,9 +88,12 @@
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
+import { useI18n } from 'vue-i18n'
 import { MonitorPlay, RefreshCw, ExternalLink, ChevronUp, ChevronDown } from 'lucide-vue-next'
 import { projects } from '@/data/projects'
 import ProjectCard from '@/components/ui/ProjectCard.vue'
+
+const { t } = useI18n()
 
 const currentProjectIndex = ref(-1)
 const currentUrl = ref('')

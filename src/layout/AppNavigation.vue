@@ -11,7 +11,17 @@
       </li>
     </ul>
 
-    <div class="flex items-center gap-4 z-50">
+    <div class="flex items-center gap-2 md:gap-4 z-50">
+      <div
+        class="flex rounded-full border border-dynamic overflow-hidden text-[10px] md:text-xs font-bold uppercase tracking-tighter">
+        <button v-for="opt in localeOptions" :key="opt.code" type="button"
+          class="px-2 py-1.5 md:px-2.5 transition-colors hoverable min-w-8"
+          :class="locale === opt.code ? 'bg-(--accent) text-black' : 'text-dynamic-primary hover:bg-white/10'"
+          :aria-pressed="locale === opt.code" :aria-label="opt.label" @click="setLocale(opt.code)">
+          {{ opt.code }}
+        </button>
+      </div>
+
       <button
         class="hoverable w-10 h-10 rounded-full border border-dynamic flex items-center justify-center text-dynamic-primary hover:bg-(--accent) hover:text-black transition-all"
         @click="toggleTheme">
@@ -21,7 +31,7 @@
 
       <a href="mailto:rebeau.mickael@gmail.com"
         class="hidden md:block px-6 py-2 border border-dynamic rounded-full text-xs uppercase hover:bg-(--text-primary) hover:text-(--text-primary-hover) transition-all hoverable">
-        Let's Talk
+        {{ t('nav.cta') }}
       </a>
 
       <button class="md:hidden hoverable w-10 h-10 flex items-center justify-center text-dynamic-primary"
@@ -51,20 +61,34 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
+import { useI18n } from 'vue-i18n'
 import { Sun, Moon, Menu, X } from 'lucide-vue-next'
 import { useLenis } from 'lenis/vue'
 import { useTheme } from '@/hooks/useTheme'
+import { persistLocale, type LocaleCode } from '@/i18n'
 
 const { theme, toggleTheme } = useTheme()
+const { t, locale } = useI18n()
 const isMenuOpen = ref(false)
 const lenis = useLenis()
 
-const navLinks = [
-  { href: '#about', label: 'A Propos' },
-  { href: '#work', label: 'Projets' },
-  { href: '#contact', label: 'Contact' }
+const localeOptions: { code: LocaleCode; label: string }[] = [
+  { code: 'fr', label: 'Français' },
+  { code: 'en', label: 'English' },
+  { code: 'es', label: 'Español' },
 ]
+
+const navLinks = computed(() => [
+  { href: '#about', label: t('nav.about') },
+  { href: '#work', label: t('nav.work') },
+  { href: '#contact', label: t('nav.contact') },
+])
+
+const setLocale = (code: LocaleCode) => {
+  locale.value = code
+  persistLocale(code)
+}
 
 const scrollToSection = (href: string) => {
   isMenuOpen.value = false

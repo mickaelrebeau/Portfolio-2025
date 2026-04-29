@@ -16,7 +16,9 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, nextTick } from 'vue'
+import { ref, onMounted, nextTick, watch } from 'vue'
+import { useI18n } from 'vue-i18n'
+import { applyDocumentLocale, type LocaleCode } from '@/i18n'
 import { useTheme } from '@/hooks/useTheme'
 import { VueLenis, useLenis } from 'lenis/vue'
 import { inject } from '@vercel/analytics'
@@ -32,6 +34,14 @@ import ExperienceSection from '@/components/sections/ExperienceSection.vue'
 import FooterSection from '@/components/sections/FooterSection.vue'
 
 inject()
+
+const { locale } = useI18n()
+
+watch(
+    locale,
+    (l) => applyDocumentLocale(l as LocaleCode),
+    { immediate: true },
+)
 
 const isLoaded = ref(false)
 

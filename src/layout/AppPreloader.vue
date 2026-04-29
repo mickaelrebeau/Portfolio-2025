@@ -6,12 +6,15 @@
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
+import { useI18n } from 'vue-i18n'
 
-// @ts-ignore
+const { t } = useI18n()
+
 const preloaderRef = ref<HTMLElement | null>(null)
 
 const textRef = ref<HTMLElement | null>(null)
-const displayText = ref('MIKE DREEMAN ©2025')
+const year = new Date().getFullYear()
+const displayText = ref(t('preloader', { year }))
 const isLoaded = ref(false)
 
 const emit = defineEmits<{
@@ -90,7 +93,7 @@ class TextScramble {
 onMounted(() => {
   if (textRef.value) {
     const fx = new TextScramble(textRef.value)
-    fx.setText('MIKE DREEMAN ©2025')
+    fx.setText(t('preloader', { year }))
 
     setTimeout(() => {
       isLoaded.value = true
