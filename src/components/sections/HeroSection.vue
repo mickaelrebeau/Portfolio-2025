@@ -33,7 +33,7 @@
             class="w-12 h-12 border border-dynamic rounded-full flex items-center justify-center text-dynamic-primary hover:bg-(--accent) hover:text-black hover:border-(--accent) transition-all hoverable transform hover:scale-105">
             <Github class="w-5 h-5" />
           </a>
-          <a href="https://linkedin.com/in/mickael-rebeau" target="_blank"
+          <a href="https://linkedin.com/in/mickael-rébeau" target="_blank"
             class="w-12 h-12 border border-dynamic rounded-full flex items-center justify-center text-dynamic-primary hover:bg-(--accent) hover:text-black hover:border-(--accent) transition-all hoverable transform hover:scale-105">
             <Linkedin class="w-5 h-5" />
           </a>
