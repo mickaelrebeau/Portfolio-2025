@@ -21,11 +21,11 @@
                     </div>
 
                     <div class="flex gap-6 text-xl font-bold uppercase pt-8">
-                        <a href="https://linkedin.com/in/mickael-rebeau" target="_blank"
+                        <a href="https://linkedin.com/in/mickael-rébeau" target="_blank"
                             class="hover:scale-110 transition-transform hoverable inline-block">Linkedin</a>
                         <a href="https://github.com/mickaelrebeau" target="_blank"
                             class="hover:scale-110 transition-transform hoverable inline-block">Github</a>
-                        <a href="https://instagram.com" target="_blank"
+                        <a href="https://instagram.com/mike_photocollection" target="_blank"
                             class="hover:scale-110 transition-transform hoverable inline-block">Instagram</a>
                     </div>
                 </div>
