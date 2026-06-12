@@ -2,6 +2,11 @@ import type { Project, Experience } from '@/types'
 
 export const projects: Project[] = [
     {
+        id: 'p0',
+        tags: ['CRM', 'Minimalist', 'SaaS', 'Sales'],
+        url: 'https://www.own-minimalist.fr/'
+    },
+    {
         id: 'p1',
         tags: ['Godot Engine', 'GDScript', 'Game Dev'],
         url: 'https://mickaelrebeau.github.io/GODOT/firstgame/index.html'

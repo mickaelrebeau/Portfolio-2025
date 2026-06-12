@@ -83,6 +83,10 @@ export default {
     copyright: '© {year} Mickael Rébeau. Tous droits réservés.',
   },
   projects: {
+    p0: {
+      title: 'OWN._ CRM Minimaliste',
+      desc: 'Logiciel CRM SaaS en ligne pour commerciaux, freelances, formateurs et TPE/PME en France.',
+    },
     p1: {
       title: 'Jeu Godot 2D',
       desc: 'Mon premier jeu vidéo développé avec le moteur Godot.',
