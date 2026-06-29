@@ -8,36 +8,41 @@ export const projects: Project[] = [
     },
     {
         id: 'p1',
+        tags: ['AI', 'Aggregation', 'B2B', 'Public Procurement'],
+        url: 'https://www.mercatocopilot.fr/'
+    },
+    {
+        id: 'p2',
         tags: ['Godot Engine', 'GDScript', 'Game Dev'],
         url: 'https://mickaelrebeau.github.io/GODOT/firstgame/index.html'
     },
     {
-        id: 'p2',
+        id: 'p3',
         tags: ['Web', 'Culture', 'Event'],
         url: 'https://www.oseculture.fr/'
     },
     {
-        id: 'p3',
-        tags: ['Vercel', 'React', 'Design'],
+        id: 'p4',
+        tags: ['Vercel', 'Vue.js', 'Design'],
         url: 'https://pixel-plateform.vercel.app/'
     },
     {
-        id: 'p4',
+        id: 'p5',
         tags: ['Social', 'Networking', 'Dev'],
         url: 'https://meetdev-mike-dreeman.vercel.app/'
     },
     {
-        id: 'p5',
+        id: 'p6',
         tags: ['AI', 'Parsing', 'Utility'],
         url: 'https://cv-offer-comparer-mike-dreeman.vercel.app/'
     },
     {
-        id: 'p6',
+        id: 'p7',
         tags: ['Competition', 'Ranking', 'VueJS'],
         url: 'https://mike-dreeman-clash-of-dev.vercel.app/'
     },
     {
-        id: 'p7',
+        id: 'p8',
         tags: ['Integration', 'Responsive', 'Frontend'],
         url: 'https://mickaelrebeau.github.io/Helwena-Design/'
     }

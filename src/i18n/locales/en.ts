@@ -88,30 +88,34 @@ export default {
       desc: 'CRM software for sales reps, freelancers and SMBs.',
     },
     p1: {
+      title: 'MercatoCopilot, veille sur les marchés publics',
+      desc: 'Agrégation BOAMP, PLACE, TED Europe, alertes email, résumés IA et scoring de pertinence.',
+    },
+    p2: {
       title: 'Godot 2D Game',
       desc: 'My first video game built with the Godot engine.',
     },
-    p2: {
+    p3: {
       title: 'OseCulture',
       desc: 'Immersive cultural platform.',
     },
-    p3: {
+    p4: {
       title: 'Pixel Platform',
       desc: 'Collaborative pixel-art drawing web platform.',
     },
-    p4: {
+    p5: {
       title: 'MeetDev',
       desc: 'Social network for developers — Tinder for devs.',
     },
-    p5: {
+    p6: {
       title: 'CV Offer Comparer',
       desc: 'AI tool to analyze CV vs job posting fit.',
     },
-    p6: {
+    p7: {
       title: 'Clash of Dev',
       desc: 'Coding competition app.',
     },
-    p7: {
+    p8: {
       title: 'Design to Code',
       desc: 'HTML/CSS integration challenge.',
     },

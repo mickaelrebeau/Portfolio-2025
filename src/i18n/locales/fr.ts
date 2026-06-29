@@ -88,30 +88,34 @@ export default {
       desc: 'Logiciel CRM SaaS en ligne pour commerciaux, freelances, formateurs et TPE/PME en France.',
     },
     p1: {
+      title: 'MercatoCopilot, veille sur les marchés publics',
+      desc: 'Agrégation BOAMP, PLACE, TED Europe, alertes email, résumés IA et scoring de pertinence.',
+    },
+    p2: {
       title: 'Jeu Godot 2D',
       desc: 'Mon premier jeu vidéo développé avec le moteur Godot.',
     },
-    p2: {
+    p3: {
       title: 'OseCulture',
       desc: 'Plateforme culturelle immersive.',
     },
-    p3: {
+    p4: {
       title: 'Pixel Platform',
       desc: 'Plateforme web collaborative de dessin pixel art.',
     },
-    p4: {
+    p5: {
       title: 'MeetDev',
       desc: 'Réseau social pour développeurs — le Tinder du dev.',
     },
-    p5: {
+    p6: {
       title: 'CV Offer Comparer',
       desc: "Outil IA pour analyser l'adéquation CV / offre.",
     },
-    p6: {
+    p7: {
       title: 'Clash of Dev',
       desc: 'Application de concours de code.',
     },
-    p7: {
+    p8: {
       title: 'Design to Code',
       desc: "Challenge d'intégration HTML/CSS.",
     },
