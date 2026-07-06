@@ -92,26 +92,30 @@ export default {
       desc: 'Agrégation BOAMP, PLACE, TED Europe, alertes email, résumés IA et scoring de pertinence.',
     },
     p2: {
+      title: 'TV Track',
+      desc: 'Suivi et analyse des séries TV.',
+    },
+    p3: {
       title: 'Jeu Godot 2D',
       desc: 'Mon premier jeu vidéo développé avec le moteur Godot.',
     },
-    p3: {
+    p4: {
       title: 'OseCulture',
       desc: 'Plateforme culturelle immersive.',
     },
-    p4: {
+    p5: {
       title: 'Pixel Platform',
       desc: 'Plateforme web collaborative de dessin pixel art.',
     },
-    p5: {
+    p6: {
       title: 'MeetDev',
       desc: 'Réseau social pour développeurs — le Tinder du dev.',
     },
-    p6: {
+    p7: {
       title: 'Clash of Dev',
       desc: 'Application de concours de code.',
     },
-    p7: {
+    p8: {
       title: 'Design to Code',
       desc: "Challenge d'intégration HTML/CSS.",
     },

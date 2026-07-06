@@ -13,31 +13,36 @@ export const projects: Project[] = [
     },
     {
         id: 'p2',
+        tags: ['Tracking', 'Analytics', 'TV Time'],
+        url: 'https://www.tv-track.com/'
+    },
+    {
+        id: 'p3',
         tags: ['Godot Engine', 'GDScript', 'Game Dev'],
         url: 'https://mickaelrebeau.github.io/GODOT/firstgame/index.html'
     },
     {
-        id: 'p3',
+        id: 'p4',
         tags: ['Web', 'Culture', 'Event'],
         url: 'https://www.oseculture.fr/'
     },
     {
-        id: 'p4',
+        id: 'p5',
         tags: ['Vercel', 'Vue.js', 'Design'],
         url: 'https://pixel-plateform.vercel.app/'
     },
     {
-        id: 'p5',
+        id: 'p6',
         tags: ['Social', 'Networking', 'Dev'],
         url: 'https://meetdev-mike-dreeman.vercel.app/'
     },
     {
-        id: 'p6',
+        id: 'p7',
         tags: ['Competition', 'Ranking', 'VueJS'],
         url: 'https://mike-dreeman-clash-of-dev.vercel.app/'
     },
     {
-        id: 'p7',
+        id: 'p8',
         tags: ['Integration', 'Responsive', 'Frontend'],
         url: 'https://mickaelrebeau.github.io/Helwena-Design/'
     }
