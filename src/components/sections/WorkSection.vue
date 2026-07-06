@@ -64,7 +64,7 @@
                         <iframe ref="iframeRef" :src="currentUrl"
                             class="w-full h-full bg-white transition-opacity duration-500"
                             :class="{ 'opacity-0': isLoading || currentProjectIndex === -1, 'opacity-100': !isLoading && currentProjectIndex !== -1 }"
-                            sandbox="allow-scripts allow-forms allow-popups" />
+                            sandbox="allow-scripts allow-same-origin allow-forms allow-popups" />
 
                         <div
                             class="absolute bottom-6 right-6 z-30 opacity-0 group-hover:opacity-100 transition-opacity flex gap-4">
