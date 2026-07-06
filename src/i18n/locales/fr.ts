@@ -108,14 +108,10 @@ export default {
       desc: 'Réseau social pour développeurs — le Tinder du dev.',
     },
     p6: {
-      title: 'CV Offer Comparer',
-      desc: "Outil IA pour analyser l'adéquation CV / offre.",
-    },
-    p7: {
       title: 'Clash of Dev',
       desc: 'Application de concours de code.',
     },
-    p8: {
+    p7: {
       title: 'Design to Code',
       desc: "Challenge d'intégration HTML/CSS.",
     },

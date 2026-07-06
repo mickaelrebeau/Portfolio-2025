@@ -33,16 +33,11 @@ export const projects: Project[] = [
     },
     {
         id: 'p6',
-        tags: ['AI', 'Parsing', 'Utility'],
-        url: 'https://cv-offer-comparer-mike-dreeman.vercel.app/'
-    },
-    {
-        id: 'p7',
         tags: ['Competition', 'Ranking', 'VueJS'],
         url: 'https://mike-dreeman-clash-of-dev.vercel.app/'
     },
     {
-        id: 'p8',
+        id: 'p7',
         tags: ['Integration', 'Responsive', 'Frontend'],
         url: 'https://mickaelrebeau.github.io/Helwena-Design/'
     }
